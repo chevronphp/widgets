@@ -1,5 +1,5 @@
 {
-	"name"        : "henderjon/chevron.widgets",
+	"name"        : "henderjon/chevron-widgets",
 	"type"        : "library",
 	"description" : "a simple view/template system",
 	"homepage"    : "http://github.com/henderjon/chevron.widgets",
