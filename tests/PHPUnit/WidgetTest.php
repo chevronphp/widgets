@@ -1,7 +1,5 @@
 <?php
 
-require_once "vendor/autoload.php";
-
 use \Chevron\Widgets\Widget;
 
 class WidgetTest extends PHPUnit_Framework_TestCase {
