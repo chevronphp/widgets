@@ -1,4 +1,4 @@
-# chevron.widgets
+# chevron.widgets [![Build Status](https://travis-ci.org/henderjon/chevron.widgets.svg?branch=master)](https://travis-ci.org/henderjon/chevron.widgets)
 
 A simple view/templating system. It's designed to allow for
 an OO interface for the scoped inclusion a file (as PHP) while allowing scoped
@@ -13,27 +13,7 @@ If there isn't an examples dir, look through the tests.
 
 Using [composer](http://getcomposer.org/) `"require" : { "henderjon/chevron-widgets": "~2.0" }`
 
-# license
-
-See LICENSE.md for the [BSD-3-Clause](http://opensource.org/licenses/BSD-3-Clause) license.
-
-## links
-
-  - The [Packagist archive](https://packagist.org/packages/henderjon/chevron-widgets)
-  - Reading on [Semantic Versioning](http://semver.org/)
-  - Reading on [Composer Versioning](https://getcomposer.org/doc/01-basic-usage.md#package-versions)
-
-### cool kids badges
-
-#### travis
-
-[![Build Status](https://travis-ci.org/henderjon/chevron.widgets.svg?branch=master)](https://travis-ci.org/henderjon/chevron.widgets)
-
-#### scruitinizer
-
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/henderjon/chevron.widgets/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/henderjon/chevron.widgets/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/henderjon/chevron.widgets/badges/build.png?b=master)](https://scrutinizer-ci.com/g/henderjon/chevron.widgets/build-status/master)
-[![Code Coverage](https://scrutinizer-ci.com/g/henderjon/chevron.widgets/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/henderjon/chevron.widgets/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/henderjon/chevron-widgets/v/stable.svg)](https://packagist.org/packages/henderjon/chevron-widgets)
 
 
 
