@@ -15,6 +15,10 @@
 
 [![Build Status](https://travis-ci.org/henderjon/chevron.widgets.svg?branch=master)](https://travis-ci.org/henderjon/chevron.widgets)
 
+#### hhvm
+
+[![HHVM Status](http://hhvm.h4cc.de/badge/henderjon/chevron-widgets.png)](http://hhvm.h4cc.de/package/henderjon/chevron-widgets)
+
 #### scruitinizer-ci
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/henderjon/chevron.widgets/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/henderjon/chevron.widgets/?branch=master)
