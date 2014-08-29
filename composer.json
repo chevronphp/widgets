@@ -1,8 +1,8 @@
 {
-	"name"        : "henderjon/chevron-widgets",
+	"name"        : "chevron/widgets",
 	"type"        : "library",
 	"description" : "a simple view/template system",
-	"homepage"    : "http://github.com/henderjon/chevron.widgets",
+	"homepage"    : "http://github.com/chevronphp/widgets",
 	"license"     : "BSD-3-Clause",
 	"authors"     : [
 		{
