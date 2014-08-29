@@ -1,4 +1,4 @@
-## chevron.widgets
+# chevron/widgets
 
 A simple view/templating system. It's designed to allow for
 an OO interface for the scoped inclusion a file (as PHP) while allowing scoped
