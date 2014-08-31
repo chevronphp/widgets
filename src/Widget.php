@@ -27,7 +27,7 @@ class Widget implements Interfaces\WidgetInterface {
 		if( file_exists($file) ){
 			$this->file = $file;
 		}else{
-			throw new \Exception("Widget::__construct() cannot render an empty file.");
+			throw new Exceptions\WidgetException(__CLASS__ . " cannot render an empty file.");
 		}
 
 		if(!empty($data)){

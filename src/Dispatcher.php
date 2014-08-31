@@ -18,7 +18,7 @@ class Dispatcher {
 	 */
 	function __construct($dir){
 		if( !is_dir($dir) ){
-			throw new \Exception("WidgetDispatcher::__construct requires a valid source directory.");
+			throw new Exceptions\WidgetException(__CLASS__ . " requires a valid source directory.");
 		}
 
 		$this->sourceDir = trim($dir);

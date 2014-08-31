@@ -9,6 +9,14 @@ class WidgetTest extends PHPUnit_Framework_TestCase {
 		$this->assertTrue(($widget InstanceOf Widget));
 	}
 
+	/**
+	 * @expectedException \Chevron\Widgets\Exceptions\WidgetException
+	 */
+	function test___construct_exception(){
+		$widget = new Widget(__DIR__."/exampleNOTView.php");
+		$this->assertTrue(($widget InstanceOf Widget));
+	}
+
 	function test___get(){
 		$widget = new Widget(__DIR__."/exampleView.php", ["test" => "data"]);
 		$this->assertEquals("data", $widget->test);
