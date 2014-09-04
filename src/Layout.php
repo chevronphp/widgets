@@ -18,7 +18,7 @@ class Layout extends Widget {
 	 * assign a widget as the view to be injected
 	 * @param Widget $view The view
 	 */
-	function setView( Interfaces\WidgetInterface $view ){
+	function setView( callable $view ){
 		$this->view = $view;
 	}
 
