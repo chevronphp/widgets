@@ -1,5 +1,5 @@
 <?php
 
-namespace Chevron\Widgets\Exceptions;
+namespace Chevron\Widgets;
 
 class WidgetException extends \Exception {}

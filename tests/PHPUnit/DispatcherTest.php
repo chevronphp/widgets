@@ -5,7 +5,7 @@ use \Chevron\Widgets\Dispatcher;
 class DispatcherTest extends PHPUnit_Framework_TestCase {
 
 	/**
-	 * @expectedException \Chevron\Widgets\Exceptions\WidgetException
+	 * @expectedException \Chevron\Widgets\WidgetException
 	 */
 	function test___construct_exception(){
 

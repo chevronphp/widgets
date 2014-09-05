@@ -6,7 +6,7 @@ namespace Chevron\Widgets;
  *
  * @package Chevron\Widgets
  */
-class Widget implements Interfaces\WidgetInterface {
+class Widget implements WidgetInterface {
 	/**
 	 * The file that the widget will load
 	 */
@@ -27,7 +27,7 @@ class Widget implements Interfaces\WidgetInterface {
 		if( file_exists($file) ){
 			$this->file = $file;
 		}else{
-			throw new Exceptions\WidgetException(__CLASS__ . " cannot render an empty file.");
+			throw new WidgetException(__CLASS__ . " cannot render an empty file.");
 		}
 
 		if(!empty($data)){
@@ -55,14 +55,14 @@ class Widget implements Interfaces\WidgetInterface {
 	}
 
 	/**
-	 * for docs, check \Chevron\Widgets\Interfaces\WidgetInterface
+	 * for docs, check \Chevron\Widgets\WidgetInterface
 	 */
 	function set($key, $value){
 		$this->map[$key] = $value;
 	}
 
 	/**
-	 * for docs, check \Chevron\Widgets\Interfaces\WidgetInterface
+	 * for docs, check \Chevron\Widgets\WidgetInterface
 	 */
 	function setMany(array $map){
 		foreach($map as $key => $value){
@@ -71,25 +71,33 @@ class Widget implements Interfaces\WidgetInterface {
 	}
 
 	/**
-	 * for docs, check \Chevron\Widgets\Interfaces\WidgetInterface
+	 * for docs, check \Chevron\Widgets\WidgetInterface
 	 */
 	function render(){
 		return require($this->file);
 	}
 
 	/**
-	 * for docs, check \Chevron\Widgets\Interfaces\WidgetInterface
+	 * for docs, check \Chevron\Widgets\WidgetInterface
 	 */
 	function __invoke(){
 		return $this->render();
 	}
 
 	/**
-	 * for docs, check \Chevron\Widgets\Interfaces\WidgetInterface
+	 * for docs, check \Chevron\Widgets\WidgetInterface
 	 */
 	function __get($key){
-		if(!array_key_exists($key, $this->map)) return null;
-		return $this->map[$key];
+		return $this->get($key);
+	}
+
+	/**
+	 * for docs, check \Chevron\Widgets\WidgetInterface
+	 */
+	function get($key){
+		if(array_key_exists($key, $this->map)){
+			return $this->map[$key];
+		}
 	}
 
 }
