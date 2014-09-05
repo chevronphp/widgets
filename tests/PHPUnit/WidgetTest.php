@@ -22,6 +22,11 @@ class WidgetTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals("data", $widget->test);
 	}
 
+	function test___get_empty(){
+		$widget = new Widget(__DIR__."/exampleView.php", ["test" => "data"]);
+		$this->assertEquals(null, $widget->nonValue);
+	}
+
 	function test___isset(){
 		$widget = new Widget(__DIR__."/exampleView.php", ["test" => "data"]);
 		$this->assertTrue(isset($widget->test));
