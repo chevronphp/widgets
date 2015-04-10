@@ -9,26 +9,29 @@ abstract class AbstractWidget {
 	 */
 	private $internalDataMap = array();
 
+	/**
+	 * make your widget callable
+	 */
 	abstract function __invoke();
 
 	/**
 	 * for docs, check \Chevron\Widgets\WidgetInterface
 	 */
-	function get($key){
+	public function get($key){
 		return isset($this->internalDataMap[$key]) ? $this->internalDataMap[$key] : null;
 	}
 
 	/**
 	 * for docs, check \Chevron\Widgets\WidgetInterface
 	 */
-	function set($key, $value){
+	public function set($key, $value){
 		$this->internalDataMap[$key] = $value;
 	}
 
 	/**
 	 * for docs, check \Chevron\Widgets\WidgetInterface
 	 */
-	function setMany(array $internalDataMap){
+	public function setMany(array $internalDataMap){
 		foreach($internalDataMap as $key => $value){
 			$this->set($key, $value);
 		}
@@ -39,7 +42,7 @@ abstract class AbstractWidget {
 	 * @param string $name The key of the data to check
 	 * @return bool
 	 */
-	function __isset($name){
+	public function __isset($name){
 		return array_key_exists($name, $this->internalDataMap);
 	}
 
