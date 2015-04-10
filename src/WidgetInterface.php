@@ -33,11 +33,6 @@ interface WidgetInterface {
 	function setMany(array $data);
 
 	/**
-	 * Require, and thus render, a file
-	 */
-	function render();
-
-	/**
 	 * Method to make this class callable
 	 * @return
 	 */

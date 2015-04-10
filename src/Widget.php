@@ -6,16 +6,11 @@ namespace Chevron\Widgets;
  *
  * @package Chevron\Widgets
  */
-class Widget implements WidgetInterface {
+class Widget extends AbstractWidget implements WidgetInterface {
 	/**
 	 * The file that the widget will load
 	 */
 	protected $file;
-
-	/**
-	 * property to hold the data local to the widget, available via __get()
-	 */
-	protected $map  = array();
 
 	/**
 	 * Set the file and data map for the Widget
@@ -36,15 +31,6 @@ class Widget implements WidgetInterface {
 	}
 
 	/**
-	 * A means to check if a particular data point is set
-	 * @param string $name The key of the data to check
-	 * @return bool
-	 */
-	function __isset($name){
-		return array_key_exists($name, $this->map);
-	}
-
-	/**
 	 * method to return the widget as a string ...
 	 * @return string
 	 */
@@ -52,22 +38,6 @@ class Widget implements WidgetInterface {
 		ob_start();
 		$this->render();
 		return ob_get_clean();
-	}
-
-	/**
-	 * for docs, check \Chevron\Widgets\WidgetInterface
-	 */
-	function set($key, $value){
-		$this->map[$key] = $value;
-	}
-
-	/**
-	 * for docs, check \Chevron\Widgets\WidgetInterface
-	 */
-	function setMany(array $map){
-		foreach($map as $key => $value){
-			$this->set($key, $value);
-		}
 	}
 
 	/**
@@ -89,15 +59,6 @@ class Widget implements WidgetInterface {
 	 */
 	function __get($key){
 		return $this->get($key);
-	}
-
-	/**
-	 * for docs, check \Chevron\Widgets\WidgetInterface
-	 */
-	function get($key){
-		if(array_key_exists($key, $this->map)){
-			return $this->map[$key];
-		}
 	}
 
 }
