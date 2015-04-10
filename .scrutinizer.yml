@@ -12,3 +12,5 @@ filter:
     excluded_paths:
         - 'tests/*'
         - 'example/*'
+        - 'vendor/*'
+
