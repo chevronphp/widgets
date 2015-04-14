@@ -6,7 +6,7 @@ namespace Chevron\Widgets;
  *
  * @package Chevron\Widgets
  */
-class Widget extends AbstractWidget implements WidgetInterface {
+class Widget extends AbstractWidget {
 	/**
 	 * The file that the widget will load
 	 */
