@@ -12,15 +12,29 @@ class Dispatcher {
 	protected $sourceDir;
 
 	/**
+	 * The source dir
+	 */
+	protected $type;
+
+	/**
 	 * Set the base directory from which to load Widgets
 	 * @param string $dir The source dir
 	 * @return
 	 */
-	function __construct($dir){
+	function __construct($dir, $type = Widget::class){
 		if( !is_dir($dir) ){
 			throw new WidgetException(__CLASS__ . " requires a valid source directory.");
 		}
 
+		if( strpos($type, __NAMESPACE__) !== 0 ){
+			throw new WidgetException("Wrong Namespace. Unknown widget type.");
+		}
+
+		if(!class_exists($type)){
+			throw new WidgetException("Unknown widget type: {$type}.");
+		}
+
+		$this->type = $type;
 		$this->sourceDir = trim($dir);
 	}
 
@@ -32,7 +46,7 @@ class Dispatcher {
 	 */
 	function __invoke($file, array $data = array()){
 		$file = sprintf("%s/%s", rtrim($this->sourceDir, DIRECTORY_SEPARATOR), ltrim($file, DIRECTORY_SEPARATOR) );
-		return new Widget($file, $data);
+		return new $this->type($file, $data);
 	}
 
 	/**

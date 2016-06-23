@@ -30,4 +30,11 @@ class Layout extends Widget {
 		return $this->view;
 	}
 
+	/**
+	 * change the base layout
+	 */
+	function setLayout($file){
+		$this->setFile($file);
+	}
+
 }

@@ -15,6 +15,8 @@ class LayoutTest extends PHPUnit_Framework_TestCase {
 		$result = $layout->getView();
 
 		$this->assertTrue(($result InstanceOf Widget));
+
+		$layout->setLayout(__DIR__."/exampleLayout.php");
 	}
 
 }

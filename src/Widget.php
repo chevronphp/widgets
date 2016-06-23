@@ -19,11 +19,7 @@ class Widget extends AbstractWidget {
 	 * @return object
 	 */
 	function __construct($file, array $data = array()){
-		if( file_exists($file) ){
-			$this->file = $file;
-		}else{
-			throw new WidgetException(__CLASS__ . " cannot render an empty file.");
-		}
+		$this->setFile($file);
 
 		if(!empty($data)){
 			$this->setMany($data);
@@ -59,6 +55,17 @@ class Widget extends AbstractWidget {
 	 */
 	function __get($key){
 		return $this->get($key);
+	}
+
+	/**
+	 * change the base layout
+	 */
+	protected function setFile($file){
+		if( file_exists($file) ){
+			$this->file = $file;
+		}else{
+			throw new WidgetException(__CLASS__ . " cannot render an empty file.");
+		}
 	}
 
 }

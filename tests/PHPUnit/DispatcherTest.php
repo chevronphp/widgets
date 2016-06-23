@@ -20,7 +20,21 @@ class DispatcherTest extends PHPUnit_Framework_TestCase {
 
 	function test_get(){
 
-		$dispatcher = new Dispatcher(__DIR__);
+		$dispatcher = new Dispatcher(__DIR__, Chevron\Widgets\Widget::class);
+
+		$widget = $dispatcher->get("exampleView.php");
+		$this->assertTrue(($widget InstanceOf \Chevron\Widgets\Widget));
+
+		$widget = $dispatcher->get("exampleView.php");
+		$this->assertTrue(($widget InstanceOf \Chevron\Widgets\Widget));
+	}
+
+	/**
+	 * @expectedException Chevron\Widgets\WidgetException
+	 */
+	function test_get_exception(){
+
+		$dispatcher = new Dispatcher(__DIR__, "Chevron\\Kernel\\Blah");
 
 		$widget = $dispatcher->get("exampleView.php");
 		$this->assertTrue(($widget InstanceOf \Chevron\Widgets\Widget));
