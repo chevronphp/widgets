@@ -23,15 +23,7 @@ class Dispatcher {
 	 */
 	function __construct($dir, $type = Widget::class){
 		if( !is_dir($dir) ){
-			throw new WidgetException(__CLASS__ . " requires a valid source directory.");
-		}
-
-		if( strpos($type, __NAMESPACE__) !== 0 ){
-			throw new WidgetException("Wrong Namespace. Unknown widget type.");
-		}
-
-		if(!class_exists($type)){
-			throw new WidgetException("Unknown widget type: {$type}.");
+			throw new \InvalidArgumentException("Not a valid source directory.");
 		}
 
 		$this->type = $type;
@@ -46,6 +38,11 @@ class Dispatcher {
 	 */
 	function __invoke($file, array $data = array()){
 		$file = sprintf("%s/%s", rtrim($this->sourceDir, DIRECTORY_SEPARATOR), ltrim($file, DIRECTORY_SEPARATOR) );
+
+		if(!class_exists($this->type)){
+			throw new \DomainException("Unknown widget type: {$this->type}.");
+		}
+
 		return new $this->type($file, $data);
 	}
 

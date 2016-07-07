@@ -61,11 +61,11 @@ class Widget extends AbstractWidget {
 	 * change the base layout
 	 */
 	protected function setFile($file){
-		if( file_exists($file) ){
-			$this->file = $file;
-		}else{
-			throw new WidgetException(__CLASS__ . " cannot render an empty file.");
+		if( !file_exists($file) ){
+			throw new \InvalidArgumentException("Not a file: {$file}");
 		}
+
+		$this->file = $file;
 	}
 
 }

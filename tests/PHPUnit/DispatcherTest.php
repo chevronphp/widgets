@@ -5,7 +5,7 @@ use \Chevron\Widgets\Dispatcher;
 class DispatcherTest extends PHPUnit_Framework_TestCase {
 
 	/**
-	 * @expectedException \Chevron\Widgets\WidgetException
+	 * @expectedException \InvalidArgumentException
 	 */
 	function test___construct_exception(){
 
@@ -30,7 +30,7 @@ class DispatcherTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException Chevron\Widgets\WidgetException
+	 * @expectedException \DomainException
 	 */
 	function test_get_exception(){
 

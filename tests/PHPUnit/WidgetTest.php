@@ -10,7 +10,7 @@ class WidgetTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException \Chevron\Widgets\WidgetException
+	 * @expectedException \InvalidArgumentException
 	 */
 	function test___construct_exception(){
 		$widget = new Widget(__DIR__."/exampleNOTView.php");
