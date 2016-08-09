@@ -10,11 +10,12 @@ class WidgetTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException \InvalidArgumentException
+	 * @expectedException \RuntimeException
 	 */
 	function test___construct_exception(){
 		$widget = new Widget(__DIR__."/exampleNOTView.php");
 		$this->assertTrue(($widget InstanceOf Widget));
+		$widget->render();
 	}
 
 	function test___get(){

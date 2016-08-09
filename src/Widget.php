@@ -40,6 +40,9 @@ class Widget extends AbstractWidget {
 	 * for docs, check \Chevron\Widgets\WidgetInterface
 	 */
 	function render(){
+		if( !file_exists($this->file) ){
+			throw new \RuntimeException("Not a file: '{$this->file}'");
+		}
 		return require($this->file);
 	}
 
@@ -61,10 +64,6 @@ class Widget extends AbstractWidget {
 	 * change the base layout
 	 */
 	protected function setFile($file){
-		if( !file_exists($file) ){
-			throw new \InvalidArgumentException("Not a file: {$file}");
-		}
-
 		$this->file = $file;
 	}
 
