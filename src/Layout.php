@@ -12,14 +12,14 @@ class Layout extends Widget {
 	/**
 	 * set the view to inject into the layout
 	 */
-	protected $view;
+	protected $__view;
 
 	/**
 	 * assign a widget as the view to be injected
 	 * @param Widget $view The view
 	 */
 	function setView( callable $view ){
-		$this->view = $view;
+		$this->__view = $view;
 	}
 
 	/**
@@ -27,7 +27,7 @@ class Layout extends Widget {
 	 * @return Widget
 	 */
 	function getView(){
-		return $this->view;
+		return $this->__view;
 	}
 
 	/**

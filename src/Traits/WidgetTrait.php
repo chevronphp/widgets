@@ -7,7 +7,7 @@ trait WidgetTrait {
 	/**
 	 * property to hold the data local to the widget, available via __get()
 	 */
-	private $internalDataMap = array();
+	private $__internalDataMap = array();
 
 	/**
 	 * make your widget callable
@@ -18,14 +18,14 @@ trait WidgetTrait {
 	 * for docs, check \Chevron\Widgets\WidgetInterface
 	 */
 	public function get($key){
-		return isset($this->internalDataMap[$key]) ? $this->internalDataMap[$key] : null;
+		return isset($this->__internalDataMap[$key]) ? $this->__internalDataMap[$key] : null;
 	}
 
 	/**
 	 * for docs, check \Chevron\Widgets\WidgetInterface
 	 */
 	public function set($key, $value){
-		$this->internalDataMap[$key] = $value;
+		$this->__internalDataMap[$key] = $value;
 	}
 
 	/**
@@ -43,7 +43,7 @@ trait WidgetTrait {
 	 * @return bool
 	 */
 	public function __isset($name){
-		return array_key_exists($name, $this->internalDataMap);
+		return array_key_exists($name, $this->__internalDataMap);
 	}
 
 }

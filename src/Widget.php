@@ -10,7 +10,7 @@ class Widget extends AbstractWidget {
 	/**
 	 * The file that the widget will load
 	 */
-	protected $file;
+	protected $__file;
 
 	/**
 	 * Set the file and data map for the Widget
@@ -40,10 +40,10 @@ class Widget extends AbstractWidget {
 	 * for docs, check \Chevron\Widgets\WidgetInterface
 	 */
 	function render(){
-		if( !file_exists($this->file) ){
-			throw new \RuntimeException("Not a file: '{$this->file}'");
+		if( !file_exists($this->__file) ){
+			throw new \RuntimeException("Not a file: '{$this->__file}'");
 		}
-		return require($this->file);
+		return require($this->__file);
 	}
 
 	/**
@@ -64,7 +64,7 @@ class Widget extends AbstractWidget {
 	 * change the base layout
 	 */
 	protected function setFile($file){
-		$this->file = $file;
+		$this->__file = $file;
 	}
 
 }
